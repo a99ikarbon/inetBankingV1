@@ -2,8 +2,9 @@ package com.inetbanking.testCases;
 
 import java.io.IOException;
 
-
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -29,9 +30,10 @@ public class TC_LoginDDT_002 extends BaseClass{
 		
 		if(isAlertPresent()==true)
 		{
+			
 			driver.switchTo().alert().accept();//close alert
 			driver.switchTo().defaultContent();
-			Assert.assertTrue(false);
+			Assert.assertTrue(true);
 			log.warn("Login failed");
 		}
 		else
@@ -39,9 +41,10 @@ public class TC_LoginDDT_002 extends BaseClass{
 			Assert.assertTrue(true);
 			log.info("Login passed");
 			lp.clickLogout();
-			Thread.sleep(3000);
-
-			driver.switchTo().alert().accept();//close alert
+			Thread.sleep(5000);
+			Alert alert=driver.switchTo().alert();
+			//System.out.println(alert.getText());
+			alert.accept();//close alert
 			driver.switchTo().defaultContent();
 		}
 	}
