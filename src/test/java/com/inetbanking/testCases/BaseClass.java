@@ -20,7 +20,7 @@ import org.testng.annotations.Parameters;
 
 import com.inetbanking.utilities.ReadConfig;
 
-import net.bytebuddy.utility.RandomString;
+
 
 public class BaseClass {
 	ReadConfig readconfig=new ReadConfig();
